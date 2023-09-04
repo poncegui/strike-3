@@ -1,0 +1,163 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: rgb(191, 193, 196);
+	color: black;
+}
+
+.hero {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 35vh;
+	font-size: 36px;
+	text-transform: uppercase;
+	
+}
+
+
+	
+
+@media (max-width: 1090px) {
+	.hero {
+		font-size: 32px;
+
+	}
+}
+
+@media (max-width: 768px) {
+	.hero {
+		font-size: 28px;
+		min-height: 20vh;
+	
+
+	}
+}
+@media (max-width: 400px) {
+	.hero {
+		font-size: 24px;
+
+	
+
+	}
+}
+
+
+
+.container {
+	width: 90%;
+	max-width: 1200px;
+	margin: 100px auto;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.container::after {
+	content: "";
+	width: 2px;
+	height: 100%;
+	background: #1b3231;
+	position: absolute;
+	top: 0;
+	left: calc(50% - 1px);
+	z-index: 1;
+}
+
+.evento {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 200px;
+	position: relative;
+}
+
+.evento::after {
+	content: "";
+	display: block;
+	width: 14px;
+	height: 14px;
+	border-radius: 100px;
+	background: #DCDFD9;
+	border: 2px solid #1b3231;
+	position: absolute;
+	z-index: 2;
+	top: calc(50% - 9px);
+	left: calc(50% - 9px);
+}
+
+.fecha {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	width: calc(42% + 20px);
+	font-size: 32px;
+	font-weight: normal;
+
+	
+}
+
+@media (max-width: 1090px) {
+	.fecha {
+		font-size: 26px;
+
+	}
+}
+
+@media (max-width: 768px) {
+	.fecha {
+		font-size: 18px;
+
+	}
+
+}
+
+@media (max-width: 400px) {
+	.fecha {
+		font-size: 16px;
+		padding: 0px 20px;
+
+	}
+}
+
+.foto {
+	width: 42%;
+	border: 1px solid black;
+	position: relative;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	background-color: white;
+}
+
+.foto::after {
+	content: "";
+	display: block;
+	border: 20px solid transparent;
+	border-left: 20px solid #fff;
+	position: absolute;
+	right: -50px;
+	top: calc(50% - 20px);
+}
+
+.foto img {
+	width: 100%;
+	vertical-align: top;
+}
+
+.evento:nth-child(even) {
+	flex-direction: row-reverse;
+}
+
+.evento:nth-child(even) .fecha {
+	justify-content: end;
+}
+
+.evento:nth-child(even) .foto::after {
+	content: "";
+	border: 20px solid transparent;
+	border-right: 20px solid #fff;
+	right: initial;
+	left: -50px;
+}
